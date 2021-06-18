@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="register.css">
+<h1 class="heading">Daily Expense Tracker</h1><br>
+<div class="container">
+  <form name="register" method="post" action="register.php">
+    <h2>Register</h2>
+    <div class="row">
+      <div class="col-25">
+        <label for="username">User Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="username" name="username" placeholder="User name..." required="true" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="password" name="password" placeholder="Password..." onkeyup="pwdlen();" required="true"><span id = "msg"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Confirm Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Password..." onkeyup='checkpwd();' required="true">
+        <span id='message'></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="max">Enter Maximum Daily Limit</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="dailylimit" name="dailylimit" placeholder="Max. Daily Limit..." required="true" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <button class="register" type="submit" name="register"><a href="dashboard.php">Register</a></button>
+    </button>
+      <a class="login" href="index.html" name="login">Login</a>
+    </div>
+  </form>
+  </div>
+</body>
+<script type="text/javascript">
+  function pwdlen(){
+    var pwd = document.getElementById("password").value;  
+    if(pwd.length < 6) {  
+      document.getElementById('msg').style.color = 'red';
+     document.getElementById('msg').innerHTML = "**Password length must be atleast 6 characters";   
+    }  
+    else{
+      document.getElementById('msg').innerHTML = ""; 
+    }
+  }
+  function checkpwd(){
+    if (document.getElementById('password').value ==
+    document.getElementById('confirmpassword').value){
+       document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = '';
+    }
+    else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = '**Passwords are not the same';
+  }
+  }
+</script>
+</html>

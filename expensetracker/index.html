@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="index.css">
+<h1 class="heading">Daily Expense Tracker</h1>
+<div class="container">
+    <form method="post" action="index.php" autocomplete="on">
+      <h2>Login</h2>
+    <div class="row">
+      <div class="col-25">
+        <label for="username">User Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="username" name="username" placeholder="User name..." required="true">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="password" name="password" placeholder="Password..." required="true">
+      </div>
+    </div>
+    <div class="row" style="padding-top: 10px;">
+        <a href="#" style="color: blue;">Forgot Password?</a>
+    </div>
+    <br>
+    <div class="row">
+      <button class="login" type="submit" name="login"><a>Log in</a></button>
+      <a class="register" href="register.html">Register</a>
+    </div>
+</form>  
+</div>
+</body>
+</html>
